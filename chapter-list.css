@@ -1,0 +1,43 @@
+.chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.chapter-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.chapter-name {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.progress-circle {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--progress-color) calc(var(--progress) * 3.6deg),
+        #ddd calc(var(--progress) * 3.6deg)
+    );
+}
+
+.progress-circle::after {
+    content: attr(data-progress) '%';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
